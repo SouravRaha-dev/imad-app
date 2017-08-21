@@ -35,4 +35,4 @@ submit.onclick = function () {
         var name = nameInput.value;
         request.open('GET','http://souravraha099.imad.hasura-app.io/submit-name?name=' + name,true);
         request.send(null);
-}
+};
