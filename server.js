@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+var pool = new Pool(config);
 var config = {
   user: 'souravraha099',
   database: 'souravraha099',
@@ -100,7 +101,6 @@ app.post('/login', function (req, res) {
     });
 });
 
-var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
     pool.query('SELECT * FROM test', function (err, result) {
         if(err)
